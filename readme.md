@@ -13,5 +13,8 @@ We can embed one in the bundle file by using the <code>--debug</code> flag when 
 
 To enable live reload, use <code>grunt serve</code> and access localhost:9001.
 
+### Notes
+Custom transform is not added.
+
 
 
