@@ -11,14 +11,15 @@ module.exports = function(grunt) {
                 dest: 'src/js/app.bundle.js',
                 options: {
                     browserifyOptions: {
-                        debug: true
+                        debug: true,
+                        transform: ['hbsfy']
                     }
                 }
             }
         },
         watch: {
             app: {
-                files: ['src/js/**/*.js'],
+                files: ['src/js/**/*.js', 'src/templates/**/*.hbs'],
                 tasks: ['browserify'],
                 options: {
                     livereload: true

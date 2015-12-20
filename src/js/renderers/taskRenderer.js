@@ -1,16 +1,10 @@
 'use strict';
 
 var $ = require('jquery');
-
-var taskTemplate = '<li class="list-group-item task">Task: <input class="complete" type="checkbox" /> <input class="description " type="text" /><button class="delete-button btn btn-danger btn-xs">Remove</button></li>';
+var taskTemplate = require('../../templates/task.hbs');
 
 function _renderTask(task) {
-    var $task = $(taskTemplate);
-    if(task.complete) {
-        $task.find('.complete').attr('checked', 'checked');
-    }
-    $task.find('.description').val(task.description);
-    return $task;
+    return $(taskTemplate(task));
 }
 
 exports.renderTasks = function(tasks) {
@@ -22,5 +16,3 @@ exports.renderNew = function(){
     var $taskList = $('#task-list');
     $taskList.prepend(_renderTask({}));
 };
-
-
