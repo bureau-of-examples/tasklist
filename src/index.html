@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Task List</title>
+    <link rel="icon" href="favicon.png">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/tasks.css">
+</head>
+<body>
+<header class="jumbotron">
+    <h1>Task List</h1>
+</header>
+<div class="container">
+    <div class="btn-toolbar">
+        <div class="btn-group">
+            <button id="new-task-button" class="btn btn-default">New Task</button>
+            <button id="delete-all-button" class="btn btn-default">Delete All</button>
+        </div>
+    </div>
+
+    <div id="content">
+        <ul id="task-list" class="list-group"></ul>
+        <ul id="log-list" class="list-group">
+        </ul>
+    </div>
+
+    <div class="btn-toolbar">
+        <div class="btn-group">
+            <button id="save-button" class="btn btn-default">Save</button>
+            <button id="cancel-button" class="btn btn-default">Cancel</button>
+        </div>
+    </div>
+</div>
+
+
+<script src="js/app.bundle.js"></script>
+
+</body>
+</html>
