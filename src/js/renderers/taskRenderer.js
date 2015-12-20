@@ -2,7 +2,7 @@
 
 var $ = require('jquery');
 
-var taskTemplate = '<li class="list-group-item task"><input class="complete" type="checkbox" /> <input class="description " type="text" /><button class="delete-button btn btn-danger btn-xs">Remove</button></li>';
+var taskTemplate = '<li class="list-group-item task">Task: <input class="complete" type="checkbox" /> <input class="description " type="text" /><button class="delete-button btn btn-danger btn-xs">Remove</button></li>';
 
 function _renderTask(task) {
     var $task = $(taskTemplate);
@@ -22,3 +22,5 @@ exports.renderNew = function(){
     var $taskList = $('#task-list');
     $taskList.prepend(_renderTask({}));
 };
+
+
