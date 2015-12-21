@@ -1,10 +1,19 @@
-//var proxyquire = require('proxyquireify')(require);
+var proxyquire = require('proxyquireify')(require);
 
 describe('The taskModule', function () {
     describe('add function', function () {
         it('calls taskRenderer.renderNew', function () {
-            var tasks = require('../src/js/tasks');
-            var taskRenderer = require('../src/js/renderers/taskRenderer');
+
+            var taskRenderer = {
+                renderNew: function(){}
+            };
+
+            var mocks = {
+                './renderers/taskRenderer': taskRenderer //path relative to tasks module
+            };
+
+            var tasks = proxyquire('../src/js/tasks', mocks);
+
             spyOn(taskRenderer, 'renderNew');
 
             tasks.add();
